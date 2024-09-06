@@ -23,6 +23,7 @@ import { SlackMessage } from './slack-message';
 import { A11y } from './a11y';
 import { DisableDrag } from './DisableDrag';
 import { ScrollableSnapPoints } from './ScrollableSnapPoints';
+import { ScrollableSnapPointsType2 } from './ScrollableSnapPointsType2';
 import { ContentHeight } from './ContentHeight';
 import { AvoidKeyboard } from './AvoidKeyboard';
 
@@ -50,6 +51,14 @@ export function App() {
         element={
           <Screen bg="light">
             <ScrollableSnapPoints />
+          </Screen>
+        }
+      />
+      <Route
+        path="scrollable-snap-points-type2"
+        element={
+          <Screen bg="light">
+            <ScrollableSnapPointsType2 />
           </Screen>
         }
       />
