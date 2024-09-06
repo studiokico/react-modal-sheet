@@ -133,8 +133,8 @@ const Sheet = forwardRef<any, SheetProps>(
       // Update drag indicator rotation based on drag velocity
       const velocity = y.getVelocity();
 
-      if (velocity > 0) indicatorRotation.set(10);
-      if (velocity < 0) indicatorRotation.set(-10);
+      if (velocity > 0) indicatorRotation.set(1);
+      if (velocity < 0) indicatorRotation.set(-1);
 
       // Make sure user cannot drag beyond the top of the sheet
       y.set(Math.max(y.get() + delta.y, 0));
@@ -174,7 +174,7 @@ const Sheet = forwardRef<any, SheetProps>(
         }
 
         // 현재 스냅 포인트를 찾음
-        snapTo = getClosest(snapToValues, currentY, 1);
+        snapTo = getClosest(snapToValues, currentY);
         snapIndex = snapToValues.indexOf(snapTo);
 
         // velocity.y > 0: 아래로 드래그, velocity.y < 0: 위로 드래그
@@ -192,7 +192,7 @@ const Sheet = forwardRef<any, SheetProps>(
         console.log('Snap Index:', snapIndex); // snapIndex 출력
       } else {
         // Always move to closest snap point regardless of velocity or drag distance
-        snapTo = sheetHeight * 0.2;
+        snapTo = sheetHeight * 0.5;
       }
 
       snapTo = validateSnapTo({ snapTo, sheetHeight });
@@ -203,7 +203,7 @@ const Sheet = forwardRef<any, SheetProps>(
       if (snapPoints && onSnap) {
         const snapValue = Math.abs(Math.round(snapPoints[0] - snapTo));
         const snapIndex = snapPoints.indexOf(
-          getClosest(snapPoints, snapValue, 0.5)
+          getClosest(snapPoints, snapValue)
         ); // 민감도를 1로 설정
         onSnap(snapIndex);
       }

@@ -4,7 +4,7 @@ export const IS_SSR = typeof window === 'undefined';
 
 export const DEFAULT_TWEEN_CONFIG = {
   ease: 'easeOut',
-  duration: 0.05,
+  duration: 0.01,
 };
 
 export const REDUCED_MOTION_TWEEN_CONFIG = {
@@ -18,5 +18,5 @@ export const NO_TWEEN_CONFIG = {
 };
 
 // 조정된 값들
-export const DRAG_CLOSE_THRESHOLD = 0.5; // sheet가 닫히는 임계치를 낮춤
-export const DRAG_VELOCITY_THRESHOLD = 45; // 드래그 속도 임계치를 낮춤
+export const DRAG_CLOSE_THRESHOLD = 0.8; // sheet가 닫히는 임계치를 낮춤
+export const DRAG_VELOCITY_THRESHOLD = 10; // 드래그 속도 임계치를 낮춤

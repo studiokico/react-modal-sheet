@@ -2,14 +2,13 @@ import { type ForwardedRef, type RefCallback } from 'react';
 
 export function getClosest(
   nums: number[],
-  goal: number,
-  sensitivity: number = 0.3
+  goal: number
 ) {
   let closest = nums[0];
-  let minDifference = Math.abs(nums[0] - goal) * sensitivity;
+  let minDifference = Math.abs(nums[0] - goal);
 
   for (let i = 1; i < nums.length; i++) {
-    const difference = Math.abs(nums[i] - goal) * sensitivity;
+    const difference = Math.abs(nums[i] - goal);
     if (difference < minDifference) {
       closest = nums[i];
       minDifference = difference;
