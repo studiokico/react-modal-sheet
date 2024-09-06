@@ -7,7 +7,7 @@ import { Button } from './common';
 const MIN_HEIGHT = 0.3;
 const snapPoints = [-0.001, 0.3, 0.1, MIN_HEIGHT];
 const initialSnap = 1;
-const DRAG_THRESHOLD = 1; // 드래그로 인식할 최소 이동 거리
+const DRAG_THRESHOLD = 0.5; // 드래그로 인식할 최소 이동 거리
 
 export function ScrollableSnapPoints() {
   const ref = useRef<SheetRef>();
