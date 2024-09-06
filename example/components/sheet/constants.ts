@@ -18,5 +18,5 @@ export const NO_TWEEN_CONFIG = {
 };
 
 // 조정된 값들
-export const DRAG_CLOSE_THRESHOLD = 0.4; // sheet가 닫히는 임계치를 낮춤
-export const DRAG_VELOCITY_THRESHOLD = 40; // 드래그 속도 임계치를 낮춤
+export const DRAG_CLOSE_THRESHOLD = 0.5; // sheet가 닫히는 임계치를 낮춤
+export const DRAG_VELOCITY_THRESHOLD = 45; // 드래그 속도 임계치를 낮춤

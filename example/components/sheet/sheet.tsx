@@ -177,22 +177,6 @@ const Sheet = forwardRef<any, SheetProps>(
         snapTo = getClosest(snapToValues, currentY, 1);
         snapIndex = snapToValues.indexOf(snapTo);
 
-        // Get the closest snap point based on velocity or current position
-        // if (Math.abs(velocity.y) > DRAG_VELOCITY_THRESHOLD) {
-        //   // console.log(snapToValues);
-        //   snapTo =
-        //     velocity.y > 0
-        //       ? Math.max(...snapToValues)
-        //       : Math.min(...snapToValues);
-
-        //   snapIndex = snapToValues.indexOf(snapTo);
-
-        //   console.log(snapIndex);
-        // } else {
-        //   // 일반적인 드래그에서는 가장 가까운 스냅 포인트로 이동
-        //   snapTo = getClosest(snapToValues, currentY, 1);
-        // }
-
         // velocity.y > 0: 아래로 드래그, velocity.y < 0: 위로 드래그
         if (Math.abs(velocity.y) > DRAG_VELOCITY_THRESHOLD) {
           if (velocity.y > 0) {
